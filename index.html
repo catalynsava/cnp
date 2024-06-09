@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>cnp</title>
+</head>
+<body>
+    <div class="d-flex flex-column min-vh-100 min-vw-100">
+        <div class="d-flex flex-grow-1 justify-content-center align-items-center">
+            <form class="form-floating w-25">
+                <input type="text" class="form-control" id="cnp_input" placeholder="syyllddjjgggc" value="">
+                <label for="cnp_input" id="helpCnp">cnp</label>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/cnp.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#cnp_input").attr("autocomplete", "off");
+            $("#cnp_input").on("input", function(){
+                cnp_input_change();
+            });
+            
+        })
+        function cnp_input_change() {
+            $("#helpCnp").text( ValidareCnp($("#cnp_input").val()) );
+        }
+    </script>
+</body>
+</html>
