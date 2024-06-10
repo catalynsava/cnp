@@ -8,12 +8,18 @@
     <title>cnp</title>
 </head>
 <body>
-    <div class="d-flex flex-column min-vh-100 min-vw-100 bg-body-secondary">
+    <div class="d-flex flex-column min-vh-100 min-vw-100">
         <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-            <div class="input-group-lg w-25">
-                <input type="text" class="form-control" id="cnp_input" placeholder="syyllddjjgggc" value="">
-                <label for="cnp_input" id="helpCnp">cnp</label>
+
+
+            
+
+            <div class="form-floating mb-3 w-25">
+                <input type="text" class="form-control" id="cnp_input" placeholder="saallddjjccck">
+                <label for="cnp_input" id="validareCnp">cnp</label>
             </div>
+            
+              
         </div>
     </div>
 
@@ -24,12 +30,20 @@
         $(document).ready(function(){
             $("#cnp_input").attr("autocomplete", "off");
             $("#cnp_input").on("input", function(){
+                cnp_input_input();
+            });
+            $("#cnp_input").on('change', function(){
                 cnp_input_change();
             });
             
         })
+        function cnp_input_input() {
+            $("#validareCnp").text( ValidareCnp( $("#cnp_input").val()) );
+        }
         function cnp_input_change() {
-            $("#helpCnp").text( ValidareCnp( $("#cnp_input").val()) );
+            //if ($("#validareCnp").text() == '') {
+                $("#validareCnp").text("cnp");
+            //}
         }
     </script>
 </body>
