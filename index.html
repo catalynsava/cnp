@@ -8,12 +8,12 @@
     <title>cnp</title>
 </head>
 <body>
-    <div class="d-flex flex-column min-vh-100 min-vw-100">
+    <div class="d-flex flex-column min-vh-100 min-vw-100 bg-body-secondary">
         <div class="d-flex flex-grow-1 justify-content-center align-items-center">
-            <form class="form-floating w-25">
+            <div class="input-group-lg w-25">
                 <input type="text" class="form-control" id="cnp_input" placeholder="syyllddjjgggc" value="">
                 <label for="cnp_input" id="helpCnp">cnp</label>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -29,7 +29,7 @@
             
         })
         function cnp_input_change() {
-            $("#helpCnp").text( ValidareCnp($("#cnp_input").val()) );
+            $("#helpCnp").text( ValidareCnp( $("#cnp_input").val()) );
         }
     </script>
 </body>
