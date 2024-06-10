@@ -1,0 +1,1 @@
+introducere / validare dinamică CNP
