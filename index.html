@@ -32,18 +32,18 @@
             $("#cnp_input").on("input", function(){
                 cnp_input_input();
             });
-            $("#cnp_input").on('change', function(){
-                cnp_input_change();
+            $("#cnp_input").on('blur', function(){
+                cnp_input_blur();
             });
             
         })
         function cnp_input_input() {
             $("#validareCnp").text( ValidareCnp( $("#cnp_input").val()) );
         }
-        function cnp_input_change() {
-            //if ($("#validareCnp").text() == '') {
+        function cnp_input_blur() {
+            if ($("#cnp_input").val() == '') {
                 $("#validareCnp").text("cnp");
-            //}
+            }
         }
     </script>
 </body>
